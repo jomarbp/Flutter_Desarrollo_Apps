@@ -207,9 +207,10 @@ class _FormularioClientePageState extends State<FormularioClientePage> {
       body: Align(
         alignment: Alignment.topCenter,
         child: ConstrainedBox(
-          // Limita el ancho en pantallas grandes (web/desktop) para que
-          // los campos no queden desmesuradamente anchos.
-          constraints: const BoxConstraints(maxWidth: 480),
+          // Ocupa todo el ancho disponible de la ventana/emulador.
+          // (Antes estaba limitado a 480 px, lo que dejaba márgenes vacíos
+          // a los lados en pantallas anchas de web/escritorio.)
+          constraints: const BoxConstraints(maxWidth: double.infinity),
           child: SingleChildScrollView(
             padding: const EdgeInsets.all(16),
             child: Form(
